@@ -14,6 +14,8 @@ export default defineConfig({
         feature: "storyblok/Feature",
         grid: "storyblok/Grid",
         teaser: "storyblok/Teaser",
+        config: "storyblok/Config",
+        navbar: "storyblok/Navbar",
       },
       apiOptions: {
         region: "us",
