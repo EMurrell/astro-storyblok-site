@@ -4,6 +4,7 @@ import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
 import Layout from '../layouts/Layout.astro'
  
 export async function getStaticPaths() {
+ 
   const storyblokApi = useStoryblokApi()
  
   const { data } = await storyblokApi.get('cdn/links', {
@@ -12,7 +13,7 @@ export async function getStaticPaths() {
   let links = data.links
   links = Object.values(links)
  
-  return links.map((link) => {
+  return links.map((link: { slug: string }) => {
     return {
       params: {
         slug: link.slug === 'home' ? undefined : link.slug,
@@ -20,6 +21,7 @@ export async function getStaticPaths() {
     }
   })
 }
+
  
 const { slug } = Astro.params
  
@@ -45,6 +47,6 @@ const story = data.story
 export const prerender = true;
 ---
  
-<Layout title={`Mossflower | ${capitalizeSlug(slug ? slug : "Home")}`}>
+<Layout title={`Astro Storyblok Site | ${capitalizeSlug(slug ? slug : "home")}`}>
   <StoryblokComponent blok={story.content} />
 </Layout>
