@@ -41,6 +41,8 @@ function capitalizeSlug(slug: string) {
 }
  
 const story = data.story
+
+export const prerender = true;
 ---
  
 <Layout title={`Mossflower | ${capitalizeSlug(slug ? slug : "Home")}`}>
