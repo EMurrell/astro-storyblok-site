@@ -6,7 +6,6 @@ const { data } = await storyblokApi.get('cdn/stories/config', {
   resolve_links: 'url',
 })
 const navbar = data?.story?.content.Navbar
-
 ---
  
 <header class="w-full h-24">
@@ -19,7 +18,7 @@ const navbar = data?.story?.content.Navbar
         {
           navbar.map((menu: { link: { cached_url: any; story: { name: unknown } } }) => (
             <li>
-              <a href={`/${menu.link.cached_url}`} class="hover:text-[#50b0ae]">
+              <a href={`/${menu.link.cached_url}`} class="hover:text-[#50b0ae] transition ease-in-out duration-200">
                 {menu.link.story.name}
               </a>
             </li>
