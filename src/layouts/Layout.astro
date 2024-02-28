@@ -6,7 +6,6 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import Navbar from '../components/Navbar.astro';
 ---
 
 <!doctype html>
@@ -17,7 +16,7 @@ import Navbar from '../components/Navbar.astro';
     <link rel='icon' type='image/x-icon' href='/favicon.ico' />
     <title>@storyblok/astro</title>
   </head>
-  <body class='container mx-auto'>
+  <body class='container mx-auto text-neutral-800'>
     <Navbar />
     <slot />
   </body>
