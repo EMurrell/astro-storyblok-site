@@ -11,7 +11,7 @@ export default defineConfig({
       accessToken: env.STORYBLOK_TOKEN,
       components: {
         page: "storyblok/Page",
-        feature: "storyblok/Feature",
+        card: "storyblok/Card",
         grid: "storyblok/Grid",
         teaser: "storyblok/Teaser",
         config: "storyblok/Config",
