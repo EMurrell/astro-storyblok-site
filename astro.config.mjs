@@ -16,6 +16,7 @@ export default defineConfig({
         teaser: "storyblok/Teaser",
         config: "storyblok/Config",
         navbar: "storyblok/Navbar",
+        hero: "storyblok/Hero",
       },
       apiOptions: {
         region: "us",
