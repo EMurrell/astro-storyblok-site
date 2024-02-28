@@ -17,6 +17,8 @@ export default defineConfig({
         config: "storyblok/Config",
         navbar: "storyblok/Navbar",
         hero: "storyblok/Hero",
+        "featured-articles": "storyblok/FeaturedArticles",
+        "all-articles": "storyblok/AllArticles",
         article: "storyblok/Article",
       },
       apiOptions: {
