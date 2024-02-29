@@ -31,12 +31,14 @@ export default defineConfig({
     tailwind(),
   ],
   output: env.STORYBLOK_IS_PREVIEW === "yes" ? "server" : "hybrid",
-  vite: {
-    plugins: [basicSsl()],
-    server: {
-      https: true,
+  ...(env.STORYBLOK_ENV === "development" && {
+    vite: {
+      plugins: [basicSsl()],
+      server: {
+        https: true,
+      },
     },
-  },
+  }),
 
   adapter: vercel(),
 });
