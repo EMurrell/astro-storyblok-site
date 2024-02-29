@@ -1,0 +1,86 @@
+<!-- ---
+import ArticleCard from '../components/ArticleCard.astro'
+import { storyblokEditable, useStoryblokApi } from '@storyblok/astro'
+import type { getStaticPaths } from '../pages/[...slug].astro'
+const storyblokApi = useStoryblokApi()
+const { data } = await storyblokApi.get(`cdn/stories`, {
+  version: 'draft', // or 'published'
+  starts_with: 'blog/',
+//   is_startpage: 0,
+is_startpage: false,
+})
+ 
+// const articles = data.stories
+const { blok } = Astro.props
+// console.log("blok:", blok)
+// let articles = blok.articles
+// console.log("featured articles:", articles)
+---
+ 
+<section class="mx-6 my-12" {...storyblokEditable(blok)}>
+  <h2 class="text-6xl text-[#50b0ae] font-bold text-center mb-12">
+    {blok.headline}
+  </h2>
+  <ul class="grid grid-cols-1 gap-6 md:grid-cols-3">
+    {
+      articles?.length &&
+        articles?.map((article:any) => {
+          // article.content = article
+          return (
+            <li>
+              <ArticleCard article={article} />
+            </li>
+          )
+        })
+    }
+  </ul>
+</section> -->
+
+<!-- import { useStoryblokApi } from '@storyblok/astro'
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
+import Layout from '../layouts/Layout.astro'
+ 
+export async function getStaticPaths() {
+ 
+  const storyblokApi = useStoryblokApi()
+ 
+  const { data } = await storyblokApi.get('cdn/links', {
+    version: 'draft',
+    resolve_relations: ['featured-articles.articles'],
+  })
+  let links = data.links
+  links = Object.values(links)
+ 
+  return links.map((link: { slug: any }) => {
+    return {
+      params: {
+        slug: link.slug === 'home' ? undefined : link.slug,
+      },
+    }
+  })
+}
+
+ 
+// const { slug } = Astro.params
+const { slug } = Astro.params || { slug: undefined }
+ 
+const storyblokApi = useStoryblokApi()
+ 
+const { data } = await storyblokApi.get(
+  `cdn/stories/${slug === undefined ? 'home' : slug}`,
+  {
+    version: 'draft',
+  }
+)
+function capitalizeSlug(slug: string) {
+  var words = slug.split("-");
+  for (var i = 0; i < words.length; i++) {
+    var word = words[i];
+    words[i] = word.charAt(0).toUpperCase() + word.slice(1);
+  }
+  return words.join(" ");
+}
+ 
+const story = data.story
+
+export const prerender = true; -->

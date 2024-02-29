@@ -16,7 +16,7 @@ const navbar = data?.story?.content.Navbar
     <nav>
       <ul class="flex space-x-8 text-lg font-bold">
         {
-          navbar.map((menu: { link: { cached_url: any; story: { name: unknown } } }) => (
+          navbar.map((menu: { link: { cached_url: any; story: { name: any } } }) => (
             <li>
               <a href={`/${menu.link.cached_url}`} class="hover:text-[#50b0ae] transition ease-in-out duration-200">
                 {menu.link.story.name}
