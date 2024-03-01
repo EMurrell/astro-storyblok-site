@@ -6,6 +6,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+        serif: ["Noto Serif", ...defaultTheme.fontFamily.serif],
+        space: ["Space Grotesk", ...defaultTheme.fontFamily.sans],
       },
     },
   },
