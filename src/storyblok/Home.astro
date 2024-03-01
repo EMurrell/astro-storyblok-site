@@ -5,10 +5,12 @@ import { storyblokEditable } from '@storyblok/astro'
 ---
 
 <section class="w-full min-h-screen flex flex-col"  {...storyblokEditable(blok)}>
+    <div class="flex flex-col my-auto pb-48">
     <h1 class="text-7xl text-white font-bold mb-3 max-w-3xl">
         {blok.headline}
       </h1>
       <h2 class="text-2xl text-zinc-400 font-light mb-6">
         {blok.description}
       </h2>
+    </div>
 </section>
