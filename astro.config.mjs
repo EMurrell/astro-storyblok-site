@@ -14,6 +14,7 @@ export default defineConfig({
       bridge: env.STORYBLOK_IS_PREVIEW === "yes",
       components: {
         page: "storyblok/Page",
+        home: "storyblok/Home",
         card: "storyblok/Card",
         grid: "storyblok/Grid",
         teaser: "storyblok/Teaser",

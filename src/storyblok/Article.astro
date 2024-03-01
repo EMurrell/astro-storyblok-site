@@ -12,12 +12,12 @@ const renderedRichText = renderRichText(blok.content);
     src={`${blok.image.filename}/m/1600x0`}
   />
   <div class="container mx-auto mb-12">
-    <h1 class="text-6xl text-[#50b0ae] font-bold mt-12 mb-4">
+    <h1 class="text-8xl text-zinc-100 font-bold mt-12 mb-8">
       {blok.title}
     </h1>
-    <h2 class="text-2xl opacity-70 font-bold mb-4">
+    <h2 class="text-4xl text-zinc-300 mb-6">
       {blok.description}
     </h2>
-    <div class="prose opacity-70" set:html={renderedRichText} />
+    <div class="prose text-zinc-300" set:html={renderedRichText} />
   </div>
 </article>
