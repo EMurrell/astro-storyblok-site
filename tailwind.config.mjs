@@ -9,8 +9,8 @@ export default {
       },
       fontFamily: {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
-        serif: ["Noto Serif", ...defaultTheme.fontFamily.serif],
-        space: ["Space Grotesk", ...defaultTheme.fontFamily.sans],
+        serif: ["Noto Serif SC", ...defaultTheme.fontFamily.serif],
+        space: ["Space Grotesk Variable", ...defaultTheme.fontFamily.serif],
       },
     },
   },
