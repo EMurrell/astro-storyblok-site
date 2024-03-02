@@ -8,10 +8,10 @@ const { data } = await storyblokApi.get('cdn/stories/config', {
 const navbar = data?.story?.content.Navbar
 ---
  
-<header class="w-full h-24 sticky top-0 backdrop-blur-lg bg-zinc-900/70">
+<header class="w-full h-16 sm:h-20 lg:h-24 sticky top-0 backdrop-blur-lg bg-zinc-900/70">
   <div class="container h-full mx-auto flex items-center justify-between">
     <a href="/">
-      <h1 class="text-teal-500 text-4xl tracking-wide font-space">galactica</h1>
+      <h1 class="text-teal-500 text-2xl sm:text-3xl lg:text-4xl tracking-wide font-space">galactica</h1>
     </a>
     <nav>
       <ul class="flex space-x-8 text-lg">
