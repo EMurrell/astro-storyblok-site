@@ -6,7 +6,7 @@ import { storyblokEditable } from '@storyblok/astro'
   
  <div
    {...storyblokEditable(blok)}
-   class="w-full bg-[#f7f6fd] rounded-xl overflow-hidden max-w-lg cursor-pointer hover:shadow-md hover:shadow-zinc-500/50 transition-all ease-in-out duration-300 hover:-translate-y-px"
+   class="w-full bg-[#f7f6fd] rounded-xl overflow-hidden max-w-lg cursor-pointer hover:shadow-md hover:shadow-zinc-500/50 transition-all ease-in-out duration-300 hover:-translate-y-px motion-reduce:hover:transform-none"
  >
    <img
      src={blok.image.filename}
