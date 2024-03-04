@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import storyblok from "@storyblok/astro";
 import { loadEnv } from "vite";
 import tailwind from "@astrojs/tailwind";
+import icon from "astro-icon";
 import basicSsl from "@vitejs/plugin-basic-ssl";
 import vercel from "@astrojs/vercel/serverless";
 const env = loadEnv("", process.cwd(), "STORYBLOK");
@@ -29,6 +30,7 @@ export default defineConfig({
       },
     }),
     tailwind(),
+    icon(),
   ],
   output: env.STORYBLOK_IS_PREVIEW === "yes" ? "server" : "hybrid",
   ...(env.STORYBLOK_ENV === "development" && {
