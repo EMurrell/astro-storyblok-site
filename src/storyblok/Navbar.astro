@@ -1,5 +1,6 @@
 ---
 import { useStoryblokApi } from '@storyblok/astro'
+import Hamburger from '../components/Hamburger.astro'
 const storyblokApi = useStoryblokApi()
 const { data } = await storyblokApi.get('cdn/stories/config', {
   version: 'draft',
@@ -13,7 +14,7 @@ const navbar = data?.story?.content.Navbar
     <a href="/">
       <h1 class="text-teal-500 text-2xl sm:text-3xl lg:text-4xl tracking-wide font-space">galactica</h1>
     </a>
-    <nav>
+    <nav class="sm:inline-block hidden">
       <ul class="flex space-x-8 text-lg">
         {
           navbar.map((menu: { link: { cached_url: any; story: { name: any } } }) => (
@@ -26,4 +27,53 @@ const navbar = data?.story?.content.Navbar
         }
       </ul>
     </nav>
+    <Hamburger />
   </div>
+ 
+  <div
+      id="nav-links"
+      class="hidden bg-white rounded-2xl absolute inset-x-2 max-h-max mt-14 z-50 p-8 overflow-hidden text-center select-none transition ease-in-out duration-200 shadow-lg lg:hidden">
+      <ul class="flex flex-col gap-4">
+        <li>
+          <a href="/" class="font-medium text-xl"> Home</a>
+        </li>
+       
+        {
+          navbar.map(
+              (linkItem: {
+                link: { story: { name: unknown }; cached_url: any };
+              }) => (
+                <li>
+                  <a
+                    href={`/${linkItem.link.cached_url}`}
+                    class="font-medium text-xl">
+                    {linkItem.link.story?.name}
+                  </a>
+                </li>
+              )
+            )
+        }
+      </ul>
+    </div>
+  </header>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const closeButton = document.getElementById("close-button");
+    const navLinks = document.getElementById("nav-links");
+  
+    if (hamburger && closeButton && navLinks) {
+      hamburger.addEventListener("click", function () {
+        navLinks.classList.toggle("hidden");
+        hamburger.classList.toggle("hidden");
+        closeButton.classList.toggle("hidden");
+      });
+  
+      closeButton.addEventListener("click", function () {
+        navLinks.classList.toggle("hidden");
+        hamburger.classList.toggle("hidden");
+        closeButton.classList.toggle("hidden");
+      });
+    }
+  </script>
+  
