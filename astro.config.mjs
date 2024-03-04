@@ -30,7 +30,11 @@ export default defineConfig({
       },
     }),
     tailwind(),
-    icon(),
+    icon({
+      include: {
+        mdi: ["*"],
+      },
+    }),
   ],
   output: env.STORYBLOK_IS_PREVIEW === "yes" ? "server" : "hybrid",
   ...(env.STORYBLOK_ENV === "development" && {

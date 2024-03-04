@@ -25,6 +25,7 @@
     "vite": "^5.1.4"
   },
   "devDependencies": {
+    "@iconify-json/mdi": "^1.1.64",
     "@tailwindcss/typography": "^0.5.10",
     "@vitejs/plugin-basic-ssl": "^1.1.0",
     "prettier": "3.2.5"

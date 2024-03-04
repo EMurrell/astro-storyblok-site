@@ -1,5 +1,6 @@
 ---
 import { storyblokEditable } from '@storyblok/astro'
+import SocialLinks from '../components/SocialLinks.astro'
 const { blok } = Astro.props
 ---
 
@@ -11,5 +12,6 @@ const { blok } = Astro.props
       <h2 class="text-xl sm:text-2xl lg:text-3xl text-zinc-400 font-light mb-6 animate__animated animate__fadeIn animate__delay-1s">
         {blok.description}
       </h2>
+      <SocialLinks />
     </div>
 </section>

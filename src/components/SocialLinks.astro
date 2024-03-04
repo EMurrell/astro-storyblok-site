@@ -1,0 +1,58 @@
+---
+import { Icon } from "astro-icon/components";
+
+const socialLinks: {
+	friendlyName: string;
+	isWebmention?: boolean;
+	link: string;
+	name: string;
+}[] = [
+	{
+		friendlyName: "Facebook",
+		link: "https://en.wikipedia.org/wiki/Facebook",
+		name: "mdi:facebook",
+	},
+    {
+        friendlyName: "Twitter",
+        link: "https://en.wikipedia.org/wiki/Twitter",
+        name: "mdi:twitter",
+    },
+	{
+		friendlyName: "Github",
+		link: "https://en.wikipedia.org/wiki/GitHub",
+		name: "mdi:github",
+	},
+	{
+		friendlyName: "LinkedIn",
+		link: "https://en.wikipedia.org/wiki/LinkedIn",
+		name: "mdi:linkedin",
+	},
+    {
+		friendlyName: "email",
+		isWebmention: true,
+		link: "mailto:youremailaddress@gmails.com",
+		name: "mdi:email",
+	},
+];
+---
+
+<ul class="flex flex-1 items-center gap-x-2 sm:flex-initial">
+    {
+      socialLinks.map(({ friendlyName, isWebmention, link, name }) => (
+        <li class="flex">
+            <div class="rounded-full hover:bg-zinc-400 text-white hover:text-zinc-900 transition ease-in-out duration-200 w-10 h-10 flex items-center justify-center">
+                <a
+                class="inline-block p-1 sm:hover:text-link"
+                href={link}
+                rel={`noopener noreferrer ${isWebmention ? "me authn" : ""}`}
+						target="_blank"
+                >
+                <Icon aria-hidden="true" class="h-7 w-7" focusable="false" name={name} />
+                <span class="sr-only">{friendlyName}</span>
+                </a>
+            </div>
+        </li>
+        
+      ))
+    }
+  </ul>
