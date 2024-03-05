@@ -17,7 +17,10 @@ export default {
       },
       animation: {
         'spin-slow': 'spin 48s linear infinite',
-      }
+      },
+      maxWidth: {
+        "8xl": "1440px",
+      },
     },
   },
   plugins: [
