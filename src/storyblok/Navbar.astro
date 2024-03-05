@@ -1,7 +1,6 @@
 ---
 import { useStoryblokApi } from "@storyblok/astro";
 import Hamburger from "../components/Hamburger.astro";
-import ArrowUpRightIcon from "../components/ArrowUpRightIcon.astro";
 const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get("cdn/stories/config", {
   version: "draft",
@@ -47,7 +46,6 @@ const navbar = data?.story?.content.Navbar;
       <li class="flex gap-4">
         <a href="/" class="font-medium text-xl"> Home</a>
       </li>
-
       {
         navbar.map(
           (linkItem: {
