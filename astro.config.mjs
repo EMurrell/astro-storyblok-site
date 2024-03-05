@@ -16,6 +16,7 @@ export default defineConfig({
       components: {
         page: "storyblok/Page",
         home: "storyblok/Home",
+        contact: "storyblok/Contact",
         card: "storyblok/Card",
         grid: "storyblok/Grid",
         teaser: "storyblok/Teaser",
