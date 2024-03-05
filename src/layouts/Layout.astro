@@ -1,28 +1,29 @@
 ---
-import Navbar from '../storyblok/Navbar.astro';
-import '@fontsource/poppins'
-import '@fontsource-variable/space-grotesk'
-import '@fontsource/noto-serif-sc'
-import 'animate.css';
+import Navbar from "../storyblok/Navbar.astro";
+import "@fontsource/poppins";
+import "@fontsource-variable/space-grotesk";
+import "@fontsource/noto-serif-sc";
+import "animate.css";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Blog w/Astro & Storyblok</title>
   </head>
-  <body class='w-full text-zinc-100 bg-zinc-900 font-sans px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24'>
+  <body
+    class="w-full text-zinc-100 bg-zinc-900 font-sans px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24">
     <Navbar />
-    <main class="container mx-auto"> 
+    <main class="container mx-auto">
       <slot />
     </main>
   </body>
