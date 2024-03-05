@@ -16,17 +16,17 @@ const { blok } = Astro.props;
       {blok.headline}
     </h1>
     <div class="animate__animated animate__fadeIn animate__delay-1s">
-      <h2 class="text-xl sm:text-2xl lg:text-3xl text-zinc-400 font-light mb-6">
+      <h2 class="text-xl sm:text-2xl lg:text-3xl text-zinc-300 font-light mb-6">
         {blok.description}
       </h2>
       <SocialLinks />
-      <Image
-        src={backgroundImage}
-        alt="bg"
-        class="motion-safe:animate-spin-slow motion-reduce:animate-none opacity-20 absolute right-0 xl:right-12 2xl:right-24 top-8"
-        height="700"
-        width="700"
-      />
     </div>
   </div>
+  <Image
+    src={backgroundImage}
+    alt="bg"
+    class="motion-safe:animate-spin-slow motion-reduce:animate-none opacity-20 absolute right-0 xl:right-12 2xl:right-24 top-32 sm:top-8 lg:top-4 sm:p-24 lg:p-20 2xl:p-0"
+    height="700"
+    width="700"
+  />
 </section>
