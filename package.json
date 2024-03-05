@@ -17,6 +17,7 @@
     "@fontsource/noto-serif-sc": "^5.0.11",
     "@fontsource/poppins": "^5.0.8",
     "@storyblok/astro": "^4.0.2",
+    "@tailwindcss/forms": "^0.5.7",
     "animate.css": "^4.1.1",
     "astro": "^4.4.4",
     "astro-icon": "^1.1.0",

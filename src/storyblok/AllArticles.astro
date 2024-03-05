@@ -1,34 +1,36 @@
 ---
-import { storyblokEditable, useStoryblokApi } from '@storyblok/astro'
-import ArticleCard from '../components/ArticleCard.astro'
-import isPreview from '../utils/isPreview' 
-const { blok } = Astro.props
- 
-const storyblokApi = useStoryblokApi()
+import { storyblokEditable, useStoryblokApi } from "@storyblok/astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import isPreview from "../utils/isPreview";
+const { blok } = Astro.props;
+
+const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get(`cdn/stories`, {
-    version: isPreview() ? 'draft' : 'published',
-    starts_with: 'blog/',
-    //   is_startpage: 0,
-    is_startpage: false,
-})
- 
-const articles = data.stories
+  version: isPreview() ? "draft" : "published",
+  starts_with: "blog/",
+  //   is_startpage: 0,
+  is_startpage: false,
+});
+
+const articles = data.stories;
 ---
- 
-<section class="mx-6 my-12 animate__animated animate__fadeIn" {...storyblokEditable(blok)}>
-  <h2 class="text-6xl text-[#50b0ae] font-bold text-center mb-12">
-    {blok.title}
+
+<section
+  class="mx-6 my-12 animate__animated animate__fadeIn"
+  {...storyblokEditable(blok)}>
+  <h2 class="text-6xl text-primary font-bold mt-20">
+    {blok.headline}
   </h2>
-  <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-20">
     {
       articles?.length &&
         articles.map((article: any) => {
-          article.content.slug = article.slug
+          article.content.slug = article.slug;
           return (
-            <li>
+            <li class="items-stretch flex">
               <ArticleCard article={article.content} />
             </li>
-          )
+          );
         })
     }
   </ul>
