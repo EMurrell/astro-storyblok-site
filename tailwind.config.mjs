@@ -4,14 +4,11 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
-      backgroundImage: {
-        pattern_1: "url(https://res.cloudinary.com/dbobkzvku/image/upload/v1709655265/Looper-1_bkgdsj.svg)",
-        pattern_2: "url(https://res.cloudinary.com/dbobkzvku/image/upload/v1709655325/Looper-2_oydwae.svg)", 
-        pattern_3: "url(https://res.cloudinary.com/dbobkzvku/image/upload/v1709655325/Looper-3_uz0lkd.svg)",
-        pattern_4: "url(https://res.cloudinary.com/dbobkzvku/image/upload/v1709655286/Looper-4_s6q0c1.svg)", 
-      },
+     colors: {
+      primary: "#FFFE58"
+     },
       boxShadow: {
-        bottom: "inset 0px -10px 0px #fde047",
+        bottom: "inset 0px -10px 0px #FFFE58",
       },
       fontFamily: {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
