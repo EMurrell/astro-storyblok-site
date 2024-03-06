@@ -7,7 +7,7 @@ const { blok } = Astro.props;
 ---
 
 <section
-  class="w-full min-h-screen flex flex-col relative overflow-hidden"
+  class="w-full min-h-screen flex flex-col sm:relative"
   {...storyblokEditable(blok)}>
   <div
     class="flex flex-col my-auto pb-40 max-w-4xl animate__animated animate__fadeIn">
@@ -25,7 +25,7 @@ const { blok } = Astro.props;
   <Image
     src={backgroundImage}
     alt="bg"
-    class="motion-safe:animate-spin-slow motion-reduce:animate-none opacity-20 absolute right-0 xl:right-12 2xl:right-24 top-32 sm:top-8 lg:top-4 sm:p-24 lg:p-20 2xl:p-0"
+    class="motion-safe:animate-spin-slow motion-reduce:animate-none opacity-40 sm:opacity-25 absolute -right-32 sm:-right-12 xl:right-12 2xl:center top-32 sm:top-8 sm:p-24 lg:p-20 2xl:p-0"
     height="700"
     width="700"
   />
