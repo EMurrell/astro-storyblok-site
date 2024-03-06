@@ -7,17 +7,17 @@ const renderedRichText = renderRichText(blok.content);
 
 <article {...storyblokEditable(blok)}>
   <img
-    class="w-full h-72 sm:h-96 lg:h-[450px] object-cover sm:rounded-xl"
+    class="w-full h-68 sm:h-96 lg:h-[450px] object-cover rounded-md"
     alt={blok.image.alt}
     src={`${blok.image.filename}/m/1600x0`}
   />
   <div class="container mx-auto mb-12">
-    <h1 class="text-8xl text-zinc-100 font-bold mt-12 mb-8">
+    <h1 class="text-5xl lg:text-6xl xl:text-7xl text-primary font-bold mt-12">
       {blok.title}
     </h1>
-    <h2 class="text-4xl text-zinc-300 mb-6">
+    <h2 class="text-2xl lg:text-3xl xl:text-4xl text-zinc-100 mt-6">
       {blok.description}
     </h2>
-    <div class="prose text-zinc-300" set:html={renderedRichText} />
+    <div class="prose text-zinc-300/80 mt-8" set:html={renderedRichText} />
   </div>
 </article>

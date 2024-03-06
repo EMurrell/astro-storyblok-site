@@ -15,12 +15,12 @@ const articles = data.stories;
 ---
 
 <section
-  class="mx-6 my-12 animate__animated animate__fadeIn"
+  class="my-12 animate__animated animate__fadeIn"
   {...storyblokEditable(blok)}>
-  <h2 class="text-6xl text-primary font-bold mt-20">
+  <h2 class="text-5xl lg:text-6xl text-primary font-bold mt-20">
     {blok.headline}
   </h2>
-  <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-20">
+  <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-12">
     {
       articles?.length &&
         articles.map((article: any) => {
