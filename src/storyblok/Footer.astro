@@ -1,64 +1,38 @@
 ---
-import { storyblokEditable } from "@storyblok/astro";
+import { useStoryblokApi } from "@storyblok/astro";
 import SocialLinks from "../components/SocialLinks.astro";
-const { blok } = Astro.props;
+const storyblokApi = useStoryblokApi();
+const { data } = await storyblokApi.get("cdn/stories/config", {
+  version: "draft",
+  resolve_links: "url",
+});
+const footer = data?.story?.content.Footer;
 ---
 
-<footer
-  class="bg-zinc-800 border-t border-zinc-700 w-full"
-  {...storyblokEditable(blok)}>
+<footer class="bg-zinc-800 border-t border-zinc-700 w-full">
   <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-    <nav
+    <ul
       class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
       aria-label="Footer">
-      <div class="pb-6">
-        <a
-          href="#"
-          class="text-lg leading-6 text-zinc-200 hover:text-primary transition ease-in-out duration-200"
-          >About</a
-        >
-      </div>
-      <div class="pb-6">
-        <a
-          href="#"
-          class="text-lg leading-6 text-zinc-200 hover:text-primary transition ease-in-out duration-200"
-          >Blog</a
-        >
-      </div>
-      <div class="pb-6">
-        <a
-          href="#"
-          class="text-lg leading-6 text-zinc-200 hover:text-primary transition ease-in-out duration-200"
-          >Jobs</a
-        >
-      </div>
-      <div class="pb-6">
-        <a
-          href="#"
-          class="text-lg leading-6 text-zinc-200 hover:text-primary transition ease-in-out duration-200"
-          >Press</a
-        >
-      </div>
-      <div class="pb-6">
-        <a
-          href="#"
-          class="text-lg leading-6 text-zinc-200 hover:text-primary transition ease-in-out duration-200"
-          >Accessibility</a
-        >
-      </div>
-      <div class="pb-6">
-        <a
-          href="#"
-          class="text-lg leading-6 text-zinc-200 hover:text-primary transition ease-in-out duration-200"
-          >Partners</a
-        >
-      </div>
-    </nav>
+      {
+        footer.map(
+          (menu: { link: { cached_url: any; story: { name: any } } }) => (
+            <li class="text-lg pb-4">
+              <a
+                href={`/${menu.link.cached_url}`}
+                class="hover:shadow-bottom transition ease-in-out duration-500">
+                {menu.link.story.name}
+              </a>
+            </li>
+          )
+        )
+      }
+    </ul>
     <div class="mt-10 flex justify-center space-x-10">
       <SocialLinks />
     </div>
-    <p class="mt-10 text-center text-gray-500">
-      &copy; 2020 Your Company, Inc. All rights reserved.
+    <p class="mt-10 text-center text-zinc-400 font-space capitalize">
+      &copy; {new Date().getFullYear()}, the galactica templating consortium.
     </p>
   </div>
 </footer>
