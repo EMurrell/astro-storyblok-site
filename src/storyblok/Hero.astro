@@ -1,27 +1,24 @@
 ---
-import { storyblokEditable } from '@storyblok/astro'
- 
- const { blok } = Astro.props
- let dynamicHeroClass = blok.layout === 'constrained' ? 'container mx-auto' : ''
+import { storyblokEditable } from "@storyblok/astro";
+const { blok } = Astro.props;
+let dynamicHeroClass = blok.layout === "constrained" ? "container mx-auto" : "";
 ---
-  
- <div
-   {...storyblokEditable(blok)}
-   class={`${dynamicHeroClass} min-h-[600px] relative flex items-end justify-center my-6 rounded-xl overflow-hidden`}
- >
-   <div
-     class="relative z-10 w-full px-16 bg-gradient-to-t from-black/80 via-black/60 to-transparent py-6"
-   >
-     <h1 class="text-7xl text-white font-bold mb-3">
-       {blok.headline}
-     </h1>
-     <h2 class="text-3xl text-white font-light mb-6">
-       {blok.subheadline}
-     </h2>
-   </div>
-   <img
-     src={blok.background_image.filename}
-     alt={blok.background_image.alt}
-     class="absolute top-0 left-0 z-0 w-full h-full object-cover"
-   />
- </div>
+
+<div
+  {...storyblokEditable(blok)}
+  class={`${dynamicHeroClass} min-h-[600px] relative flex items-end justify-center my-6 rounded-xl overflow-hidden`}>
+  <div
+    class="relative z-10 w-full px-16 bg-gradient-to-t from-black/80 via-black/60 to-transparent py-6">
+    <h1 class="text-7xl text-white font-bold mb-3">
+      {blok.headline}
+    </h1>
+    <h2 class="text-3xl text-white font-light mb-6">
+      {blok.subheadline}
+    </h2>
+  </div>
+  <img
+    src={blok.background_image.filename}
+    alt={blok.background_image.alt}
+    class="absolute top-0 left-0 z-0 w-full h-full object-cover"
+  />
+</div>
