@@ -21,12 +21,13 @@ const { title } = Astro.props;
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Blog w/Astro & Storyblok</title>
   </head>
-  <body
-    class="w-full text-zinc-100 bg-zinc-900 font-sans px-4 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-24">
-    <Navbar />
-    <main class="container mx-auto max-w-8xl">
-      <slot />
-    </main>
+  <body class="w-full text-zinc-100 bg-zinc-900 font-sans">
+    <div class="px-4 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-24">
+      <Navbar />
+      <main class="container mx-auto max-w-8xl">
+        <slot />
+      </main>
+    </div>
     <Footer />
   </body>
 </html>
