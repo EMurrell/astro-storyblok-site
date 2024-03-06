@@ -1,5 +1,6 @@
 ---
 import Navbar from "../storyblok/Navbar.astro";
+import Footer from "../storyblok/Footer.astro";
 import "@fontsource/poppins";
 import "@fontsource-variable/space-grotesk";
 import "@fontsource/noto-serif-sc";
@@ -26,5 +27,6 @@ const { title } = Astro.props;
     <main class="container mx-auto max-w-8xl">
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
