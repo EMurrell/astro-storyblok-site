@@ -22,6 +22,7 @@ export default defineConfig({
         teaser: "storyblok/Teaser",
         config: "storyblok/Config",
         navbar: "storyblok/Navbar",
+        footer: "storyblok/Footer",
         hero: "storyblok/Hero",
         "all-articles": "storyblok/AllArticles",
         article: "storyblok/Article",

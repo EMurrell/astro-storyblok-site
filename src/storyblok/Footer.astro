@@ -1,0 +1,38 @@
+---
+import { useStoryblokApi } from "@storyblok/astro";
+import SocialLinks from "../components/SocialLinks.astro";
+const storyblokApi = useStoryblokApi();
+const { data } = await storyblokApi.get("cdn/stories/config", {
+  version: "draft",
+  resolve_links: "url",
+});
+const footer = data?.story?.content.Footer;
+---
+
+<footer class="bg-zinc-800 border-t border-zinc-700 w-full">
+  <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+    <ul
+      class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
+      aria-label="Footer">
+      {
+        footer.map(
+          (menu: { link: { cached_url: any; story: { name: any } } }) => (
+            <li class="text-lg pb-4">
+              <a
+                href={`/${menu.link.cached_url}`}
+                class="hover:shadow-bottom transition ease-in-out duration-500">
+                {menu.link.story.name}
+              </a>
+            </li>
+          )
+        )
+      }
+    </ul>
+    <div class="mt-10 flex justify-center space-x-10">
+      <SocialLinks />
+    </div>
+    <p class="mt-10 text-center text-zinc-400 font-space capitalize">
+      &copy; {new Date().getFullYear()}, the galactica templating consortium.
+    </p>
+  </div>
+</footer>
