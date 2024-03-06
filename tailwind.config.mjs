@@ -21,7 +21,10 @@ export default {
       maxWidth: {
         "8xl": "1440px",
       },
-    
+      backgroundImage: {
+        "dots": "url('/src/background-images/dots.svg')",
+   
+      }
     },
   },
   plugins: [

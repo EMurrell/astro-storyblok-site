@@ -1,6 +1,8 @@
 ---
 import { storyblokEditable } from "@storyblok/astro";
 import ContactForm from "../components/ContactForm.astro";
+import { Image } from "astro:assets";
+import Background from "../background-images/dots.svg";
 const { blok } = Astro.props;
 ---
 
@@ -18,7 +20,15 @@ const { blok } = Astro.props;
       {blok.description}
     </h2>
   </div>
-  <div class="flex flex-col xl:w-1/2 justify-start xl:pt-20 items-center">
+  <div
+    class="flex flex-col xl:w-1/2 justify-start xl:pt-20 items-center relative">
     <ContactForm />
+    <Image
+      src={Background}
+      alt="abstract background pattern"
+      height="800"
+      width="600"
+      class="opacity-10 hidden xl:block absolute top-0 right-0"
+    />
   </div>
 </section>
