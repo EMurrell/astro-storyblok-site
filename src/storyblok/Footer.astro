@@ -12,15 +12,22 @@ const footer = data?.story?.content.Footer;
 <footer class="bg-zinc-800 border-t border-zinc-700 w-full">
   <div class="mx-auto max-w-7xl overflow-hidden px-6 py-16 lg:px-8">
     <ul
-      class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
+      class="columns-2 sm:flex sm:justify-center sm:space-x-12 text-lg"
       aria-label="Footer">
+      <li class="pb-4">
+        <a
+          href="/"
+          class="hover:text-primary transition ease-in-out duration-200">
+          Home</a
+        >
+      </li>
       {
         footer.map(
           (menu: { link: { cached_url: any; story: { name: any } } }) => (
-            <li class="text-lg pb-4">
+            <li class="pb-4">
               <a
                 href={`/${menu.link.cached_url}`}
-                class="hover:shadow-bottom transition ease-in-out duration-500">
+                class="pb-4 hover:text-primary transition ease-in-out duration-200">
                 {menu.link.story.name}
               </a>
             </li>
@@ -28,6 +35,7 @@ const footer = data?.story?.content.Footer;
         )
       }
     </ul>
+
     <div class="mt-10 flex justify-center space-x-10">
       <SocialLinks />
     </div>
