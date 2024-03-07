@@ -1,11 +1,10 @@
 ---
 import { storyblokEditable, renderRichText } from "@storyblok/astro";
-
 const { blok } = Astro.props;
 const renderedRichText = renderRichText(blok.content);
 ---
 
-<article {...storyblokEditable(blok)}>
+<article class="animate__animated animate__fadeIn" {...storyblokEditable(blok)}>
   <img
     class="w-full h-68 sm:h-96 lg:h-[450px] object-cover rounded-md"
     alt={blok.image.alt}
