@@ -26,7 +26,7 @@ const articles = data.stories;
         articles.map((article: any) => {
           article.content.slug = article.slug;
           return (
-            <li class="items-stretch flex">
+            <li class="items-stretch flex mx-auto">
               <ArticleCard article={article.content} />
             </li>
           );
