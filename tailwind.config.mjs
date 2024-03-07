@@ -8,7 +8,7 @@ export default {
       primary: "#FFFE58"
      },
       boxShadow: {
-        bottom: "inset 0px -10px 0px #FFFE58",
+        bottom: "inset 0px -6px 0px #FFFE58",
       },
       fontFamily: {
         poppins: ["Poppins", ...defaultTheme.fontFamily.sans],
