@@ -12,7 +12,7 @@ const { blok } = Astro.props;
   <div
     class="flex flex-col my-auto pb-12 pt-24 xl:pb-40 max-w-4xl xl:w-1/2 xl:pr-12 bg-plus bg-contain bg-center bg-opacity-5">
     <h1
-      class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-primary font-bold mb-6 capitalize">
+      class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-primary font-medium mb-6 capitalize">
       {blok.headline}
     </h1>
 
@@ -21,7 +21,7 @@ const { blok } = Astro.props;
     </h2>
   </div>
   <div
-    class="flex flex-col xl:w-1/2 justify-start xl:pt-20 items-center relative">
+    class="flex flex-col w-full xl:w-1/2 justify-start xl:pt-20 items-center relative">
     <ContactForm />
     <Image
       src={Background}

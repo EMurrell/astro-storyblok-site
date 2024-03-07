@@ -50,14 +50,10 @@ const navbar = data?.story?.content.Navbar;
       </li>
       {
         navbar.map(
-          (linkItem: {
-            link: { story: { name: unknown }; cached_url: any };
-          }) => (
+          (menu: { link: { cached_url: any; story: { name: any } } }) => (
             <li class="flex gap-4">
-              <a
-                href={`/${linkItem.link.cached_url}`}
-                class="font-medium text-xl">
-                {linkItem.link.story?.name}
+              <a href={`/${menu.link.cached_url}`} class="font-medium text-xl">
+                {menu.link.story.name}
               </a>
             </li>
           )

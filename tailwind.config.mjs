@@ -11,7 +11,8 @@ export default {
         bottom: "inset 0px -10px 0px #FFFE58",
       },
       fontFamily: {
-        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+        poppins: ["Poppins", ...defaultTheme.fontFamily.sans],
+        inter: ["Inter Variable", ...defaultTheme.fontFamily.sans],
         serif: ["Noto Serif SC", ...defaultTheme.fontFamily.serif],
         space: ["Space Grotesk Variable", ...defaultTheme.fontFamily.serif],
       },

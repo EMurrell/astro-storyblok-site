@@ -2,6 +2,7 @@
 import Navbar from "../storyblok/Navbar.astro";
 import Footer from "../storyblok/Footer.astro";
 import "@fontsource/poppins";
+import "@fontsource-variable/inter";
 import "@fontsource-variable/space-grotesk";
 import "@fontsource/noto-serif-sc";
 import "animate.css";
@@ -9,8 +10,6 @@ import "animate.css";
 interface Props {
   title: string;
 }
-
-const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,7 +21,7 @@ const { title } = Astro.props;
     <meta name="description" content="An open-source Astro theme." />
     <title>Blog w/Astro & Storyblok</title>
   </head>
-  <body class="w-full text-zinc-100 bg-zinc-900 font-sans">
+  <body class="w-full text-zinc-100 bg-zinc-900 font-inter">
     <Navbar />
     <div
       class="px-4 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-24 relative overflow-hidden">

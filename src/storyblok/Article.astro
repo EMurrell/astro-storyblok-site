@@ -1,18 +1,17 @@
 ---
 import { storyblokEditable, renderRichText } from "@storyblok/astro";
-
 const { blok } = Astro.props;
 const renderedRichText = renderRichText(blok.content);
 ---
 
-<article {...storyblokEditable(blok)}>
+<article class="animate__animated animate__fadeIn" {...storyblokEditable(blok)}>
   <img
-    class="w-full h-68 sm:h-96 lg:h-[450px] object-cover rounded-md"
+    class="w-full h-68 sm:h-96 lg:h-[450px] object-cover"
     alt={blok.image.alt}
     src={`${blok.image.filename}/m/1600x0`}
   />
   <div class="container mx-auto mb-12">
-    <h1 class="text-5xl lg:text-6xl xl:text-7xl text-primary font-bold mt-12">
+    <h1 class="text-5xl lg:text-6xl xl:text-7xl text-primary font-medium mt-12">
       {blok.title}
     </h1>
     <h2 class="text-2xl lg:text-3xl xl:text-4xl text-zinc-100 mt-6">
