@@ -2,7 +2,7 @@
 import { storyblokEditable } from "@storyblok/astro";
 import ContactForm from "../components/ContactForm.astro";
 import { Image } from "astro:assets";
-import Background from "../background-images/dots.svg";
+import Background from "../background-images/dots-tall.svg";
 const { blok } = Astro.props;
 ---
 
@@ -26,9 +26,9 @@ const { blok } = Astro.props;
     <Image
       src={Background}
       alt="abstract background pattern"
-      height="800"
-      width="600"
-      class="opacity-10 hidden xl:block absolute top-0 right-0"
+      height="625"
+      width="400"
+      class="opacity-30 hidden xl:block absolute top-4 right-0"
     />
   </div>
 </section>
