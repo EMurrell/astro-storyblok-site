@@ -10,7 +10,7 @@ const footer = data?.story?.content.Footer;
 ---
 
 <footer class="bg-zinc-800 border-t border-zinc-700 w-full">
-  <div class="mx-auto max-w-7xl overflow-hidden px-6 py-16 lg:px-8">
+  <div class="mx-auto max-w-7xl overflow-hidden px-6 py-12 lg:px-8">
     <ul
       class="columns-2 sm:flex sm:justify-center sm:space-x-12 text-lg"
       aria-label="Footer">
@@ -36,10 +36,10 @@ const footer = data?.story?.content.Footer;
       }
     </ul>
 
-    <div class="mt-10 flex justify-center space-x-10">
+    <div class="mt-2 flex justify-center">
       <SocialLinks />
     </div>
-    <p class="mt-10 text-center text-zinc-400 font-space capitalize">
+    <p class="mt-6 text-center text-zinc-400 font-space capitalize">
       &copy; {new Date().getFullYear()}, the galactica templating consortium.
     </p>
   </div>
