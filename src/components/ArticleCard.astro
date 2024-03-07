@@ -5,10 +5,10 @@ const { article } = Astro.props;
 
 <a
   href={`/blog/${article.slug}`}
-  class="rounded-md overflow-hidden cursor-pointer group max-w-[475px] flex flex-col bg-zinc-800 transition ease-in-out duration-200">
+  class="overflow-hidden cursor-pointer group max-w-[475px] flex flex-col bg-zinc-800 transition ease-in-out duration-200">
   <div class="overflow-hidden flex h-64">
     <img
-      class="object-cover object-center rounded-t-md w-full h-full flex group-hover:scale-110 transition ease-in-out duration-500"
+      class="object-cover object-center w-full h-full flex group-hover:scale-110 transition ease-in-out duration-500"
       src={`${article.image.filename}/m/360x240`}
       alt={article.image.alt}
     />
