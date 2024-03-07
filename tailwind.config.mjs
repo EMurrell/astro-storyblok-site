@@ -23,7 +23,7 @@ export default {
         "8xl": "1440px",
       },
       backgroundImage: {
-        "dots": "url('/src/background-images/dots.svg')",
+        "dots": "url('/src/assets/dots.svg')",
    
       }
     },
