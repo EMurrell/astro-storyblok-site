@@ -1,8 +1,7 @@
 ---
 import { storyblokEditable } from "@storyblok/astro";
-import SocialLinks from "../components/SocialLinks.astro";
 import { Image } from "astro:assets";
-import backgroundImage from "../assets/spiral-1.svg";
+import Background from "../assets/dots-tall.svg";
 const { blok } = Astro.props;
 ---
 
@@ -10,7 +9,7 @@ const { blok } = Astro.props;
   class="w-full min-h-screen flex flex-col sm:relative"
   {...storyblokEditable(blok)}>
   <div
-    class="flex flex-col my-auto pb-40 max-w-[90%] md:max-w-[75%] animate__animated animate__fadeIn">
+    class="flex flex-col my-auto pb-40 max-w-[90%] md:max-w-[75%] animate__animated animate__fadeIn z-20">
     <h1
       class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-primary font-medium mb-6 capitalize">
       {blok.headline}
@@ -20,14 +19,24 @@ const { blok } = Astro.props;
         class="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-zinc-300 mb-6 max-w-[75%]">
         {blok.description}
       </h2>
-      <SocialLinks />
     </div>
   </div>
+
+  <div
+    class="overflow-hidden h-[640px] w-[480px] lg:absolute lg:right-12 2xl:center top-6 z-10">
+    <Image
+      src={blok.avatar.filename}
+      alt={blok.avatar.alt}
+      class=""
+      height="720"
+      width="480"
+    />
+  </div>
   <Image
-    src={backgroundImage}
-    alt="bg"
-    class="motion-safe:animate-spin-slow motion-reduce:animate-none opacity-40 sm:opacity-25 absolute -right-32 sm:-right-12 xl:right-12 2xl:center top-32 sm:top-8 sm:p-24 lg:p-20 2xl:p-0"
-    height="700"
-    width="700"
+    src={Background}
+    alt="abstract background pattern"
+    height="625"
+    width="400"
+    class="opacity-30 hidden lg:block absolute top-20 right-0"
   />
 </section>
