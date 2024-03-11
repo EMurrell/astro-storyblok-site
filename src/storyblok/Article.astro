@@ -17,6 +17,9 @@ const renderedRichText = renderRichText(blok.content);
     <h2 class="text-2xl lg:text-3xl xl:text-4xl text-zinc-100 mt-6">
       {blok.description}
     </h2>
-    <div class="prose text-zinc-300/80 mt-8" set:html={renderedRichText} />
+    <div
+      class="prose max-w-none prose-zinc prose-invert mt-8"
+      set:html={renderedRichText}
+    />
   </div>
 </article>
