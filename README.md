@@ -10,6 +10,13 @@ A modern Astro theme integrated with Storyblok CMS, styled with Tailwind CSS, an
 - **Tailwind CSS:** Utilizes Tailwind CSS for flexible and customizable styling.
 - **Animate.css:** Includes Animate.css library for adding simple animations with ease.
 
+- ## Performance
+
+![Lighthouse Scores](https://res.cloudinary.com/dbobkzvku/image/upload/v1715195131/Screenshot_2024-05-08_at_3.03.03_PM_n2ry9h.png)
+
+
+This project has achieved 100% scores across all relevant categories in Lighthouse performance audits. Woo! 
+
 ## Installation
 
 **Coming Soon:** Detailed setup instructions for local development/use will be provided in future updates.
